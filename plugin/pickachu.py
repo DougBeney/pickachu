@@ -10,7 +10,10 @@ DEFAULT_COLOR_FORMAT = vim.eval("g:pickachu_default_color_format")
 
 
 def dateProcessor(input, format=DEFAULT_DATE_FORMAT):
-    dateObj = datetime.strptime(input, '%m/%d/%Y')
+    try:
+        dateObj = datetime.strptime(input, '%m/%d/%Y')
+    except(ValueError):
+        dateObj = datetime.strptime(input, '%m/%d/%y')
     return dateObj.strftime(format)
 
 def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
