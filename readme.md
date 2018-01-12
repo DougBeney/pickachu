@@ -321,7 +321,7 @@ Date formatting is done through [Python datetime](https://docs.python.org/2/libr
 
 ### KDE / Qt5 / Qarma support
 
-If you are a KDE user or would rather use Qt5's color picker, install `qarma`.
+If you are a KDE and/or would rather use Qt5's color picker, install `qarma`.
 
 After doing so, add the following line to your configuration:
 
