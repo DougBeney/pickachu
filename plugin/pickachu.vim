@@ -11,11 +11,13 @@ endif
 let g:pickachu_default_date_format = "%m/%d/%Y"
 let g:pickachu_default_color_format = "hex"
 
+
+command! -nargs=* Pickachu call Pickachu(<f-args>)
+map <A-c> :Pickachu<CR>
+
 python3 import sys
 python3 import vim
 python3 sys.path.append(vim.eval('expand("<sfile>:h")'))
-
-command! -nargs=* Pickachu call Pickachu(<f-args>)
 
 function! Pickachu(...)
 python3 << EOF

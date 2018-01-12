@@ -30,7 +30,7 @@ def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
                     if i < len(array) - 1:
                         rgba_string += ", "
                     else:
-                        rgba_string += ")"
+                        rgba_string += ", 1)"
                 return rgba_string
 
 

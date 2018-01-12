@@ -72,7 +72,7 @@ or...
 
 ### Keyboard shortcuts
 
-[Coming soon.]
+The only keyboard shortcut currently is `ALT+c` which will allow you to open the color picker.
 
 ## Configuration
 
@@ -82,7 +82,7 @@ or...
 
 `let g:pickachu_default_color_format = "hex"`
 
-`Availible color formats are:`
+**Availible color formats are:**
 
 - hex
 - rgb
@@ -90,9 +90,9 @@ or...
 
 #### Default Date Format:
 
-`let g:pickachu_default_cal_format = "%m/%d/%Y"`
+`let g:pickachu_default_date_format = "%m/%d/%Y"`
 
-Date formatting is done through [Python datetime[(https://docs.python.org/2/library/datetime.html). Below is a table showing different formatting codes you could use.
+Date formatting is done through [Python datetime](https://docs.python.org/2/library/datetime.html). Below is a table showing different formatting codes you could use.
 
 <table class="docutils" border="1">
 		<colgroup>
