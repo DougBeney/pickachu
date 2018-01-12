@@ -3,25 +3,11 @@ import vim
 import subprocess
 from datetime import datetime
 
-DEFAULT_DATE_FORMAT = vim.eval("g:pickachu_default_cal_format")
+DEFAULT_DATE_FORMAT = vim.eval("g:pickachu_default_date_format")
 DEFAULT_COLOR_FORMAT = vim.eval("g:pickachu_default_color_format")
 
-arglength = int(vim.eval('a:0'))
 
-CHOOSEN_APP = 'color'
-CHOOSEN_FORMAT = None
-
-if arglength > 0:
-    CHOOSEN_APP = vim.eval('a:1')
-
-if arglength > 1:
-    CHOOSEN_FORMAT = vim.eval('a:2')
-
-if not CHOOSEN_APP:
-    CHOOSEN_APP = 'color'
-
-
-def calProcessor(input, format=DEFAULT_DATE_FORMAT):
+def dateProcessor(input, format=DEFAULT_DATE_FORMAT):
     dateObj = datetime.strptime(input, '%m/%d/%Y')
     return dateObj.strftime(format)
 
@@ -54,9 +40,9 @@ def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 apps = {
-    'cal': {
+    'date': {
         'cmd': '--calendar',
-        'processor': calProcessor
+        'processor': dateProcessor
     },
     'file': {
         'cmd': '--file-selection',
@@ -68,31 +54,47 @@ apps = {
 }
 
 def runApp(choosenApp, format=None):
-    app = apps[choosenApp]
-    output = None
-    try:
-        output = subprocess.check_output(['zenity', app['cmd']]).decode('utf-8')
-    except:
-        return None
+    app = apps.get(choosenApp, None)
+    if app:
+        output = None
+        try:
+            output = subprocess.check_output(['zenity', app['cmd']]).decode('utf-8')
+        except:
+            return None
 
-    if app.get('processor', None):
-        if format:
-            return app['processor'](output.rstrip(), format)
+        if app.get('processor', None):
+            if format:
+                return app['processor'](output.rstrip(), format)
+            else:
+                return app['processor'](output.rstrip())
         else:
-            return app['processor'](output.rstrip())
+            return output.rstrip()
     else:
-        return output.rstrip()
+        print("App does not exist.")
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-output = runApp(CHOOSEN_APP, CHOOSEN_FORMAT)
+def MainFunction():
+    arglength = int(vim.eval('a:0'))
 
+    CHOOSEN_APP = 'color'
+    CHOOSEN_FORMAT = None
 
-# Vim!
-if output:
-    pos_y, pos_x = vim.current.window.cursor
-    vim.current.line = vim.current.line[:pos_x+1] + output + vim.current.line[pos_x+1:]
-    vim.current.window.cursor = (pos_y, pos_x + len(output))
-else:
-    print('Pickachu - Canceled')
+    if arglength > 0:
+        CHOOSEN_APP = vim.eval('a:1')
+
+    if arglength > 1:
+        CHOOSEN_FORMAT = vim.eval('a:2')
+
+    if not CHOOSEN_APP:
+        CHOOSEN_APP = 'color'
+    output = runApp(CHOOSEN_APP, CHOOSEN_FORMAT)
+
+    # Vim!
+    if output:
+        pos_y, pos_x = vim.current.window.cursor
+        vim.current.line = vim.current.line[:pos_x+1] + output + vim.current.line[pos_x+1:]
+        vim.current.window.cursor = (pos_y, pos_x + len(output))
+    else:
+        print('Pickachu - Canceled')
 

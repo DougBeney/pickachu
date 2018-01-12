@@ -60,7 +60,7 @@ or...
 :Pick [app] [optional: format]
 ```
 
-**Note:** Note: The full command of `:Pick` is `Pickachu`. Use whatever feels more intuitive for you.
+**Note:** The full command of `:Pick` is `:Pickachu`. Use whatever feels more intuitive for you.
 
 **Note:** By default, `app` is set to `color` and `format` has different defaults depending on what app you choose. See more about defaults and how to change them in the [Configuration](#configuration) section
 
