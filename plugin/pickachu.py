@@ -34,9 +34,34 @@ def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
                     else:
                         rgba_string += ", 1)"
                 return rgba_string
-
-
         return array
+    elif '#' in input:
+        # If there is a '#' in input,
+        # they are most likely using Qarma instead of Zenity
+        if format == 'hex':
+            return input
+        else:
+            hex = input.lstrip('#')
+            rgb_array = tuple(int(hex[i:i+2], 16) for i in (0, 2 ,4))
+
+            if format == 'rgb':
+                rgb_string = "rgb("
+                for i in range(0, len(rgb_array)):
+                    rgb_string += str(rgb_array[i])
+                    if i < len(array) - 1:
+                        rgb_string += ", "
+                    else:
+                        rgb_string += ")"
+                return rgb_string
+            elif format == 'rgba':
+                rgba_string = "rgba("
+                for i in range(0, len(rgb_array)):
+                    rgba_string += str(rgb_array[i])
+                    if i < len(array) - 1:
+                        rgba_string += ", "
+                    else:
+                        rgba_string += ", 1)"
+                return rgba_string
     return None
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
