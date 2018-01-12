@@ -26,6 +26,12 @@ Pickachu
 
 ## Installation
 
+**Notes**: 
+
+- You must have a Vim installation with Python3 support.
+- You must have Zenity installed on your computer. On most Linux operating systems, this is already installed.
+- If you're on a Mac, there may still be hope. [Here is a guide on installing Zenity with Homebrew on Mac](https://brewinstall.org/install-zenity-on-mac-with-brew/)
+
 ### Plug
 
 Add this line to your plugin loop:
