@@ -8,9 +8,13 @@ if !has('python3')
 	echo "You need Vim Python3 support to use this plugin. If you're using NeoVim, try running `pip3 install neovim` to resolve this issue."
 endif
 
-let g:pickachu_default_date_format = "%m/%d/%Y"
-let g:pickachu_default_color_format = "hex"
+if !exists("g:pickachu_default_date_format")
+	let g:pickachu_default_date_format = "%m/%d/%Y"
+endif
 
+if !exists("g:pickachu_default_color_format")
+	let g:pickachu_default_color_format = "hex"
+endif
 
 command! -nargs=* Pickachu call Pickachu(<f-args>)
 map <A-c> :Pickachu<CR>
