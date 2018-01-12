@@ -17,6 +17,7 @@ Pickachu
 	* [Global Variables](#global-variables)
 		* [Default Color Format](#default-color-format)
 		* [Default Date Format:](#default-date-format)
+	* [KDE / Qt5 / Qarma support](#kde--qt5--qarma-support)
 
 <!-- vim-markdown-toc -->
 
@@ -317,3 +318,11 @@ Date formatting is done through [Python datetime](https://docs.python.org/2/libr
 		</tr>
 		</tbody>
 </table>
+
+### KDE / Qt5 / Qarma support
+
+If you are a KDE user or would rather use Qt5's color picker, install `qarma`.
+
+After doing so, add the following line to your configuration:
+
+`let g:pickachu_default_command = "qarma"`
