@@ -3,6 +3,8 @@ import vim
 import subprocess
 from datetime import datetime
 
+DEFAULT_COMMAND = vim.eval("g:pickachu_default_command")
+
 DEFAULT_DATE_FORMAT = vim.eval("g:pickachu_default_date_format")
 DEFAULT_COLOR_FORMAT = vim.eval("g:pickachu_default_color_format")
 
@@ -58,7 +60,7 @@ def runApp(choosenApp, format=None):
     if app:
         output = None
         try:
-            output = subprocess.check_output(['zenity', app['cmd']]).decode('utf-8')
+            output = subprocess.check_output([DEFAULT_COMMAND, app['cmd']]).decode('utf-8')
         except:
             return None
 

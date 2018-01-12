@@ -8,6 +8,11 @@ if !has('python3')
 	echo "You need Vim Python3 support to use this plugin. If you're using NeoVim, try running `pip3 install neovim` to resolve this issue."
 endif
 
+
+if !exists("g:pickachu_default_command")
+	let g:pickachu_default_command = "zenity"
+endif
+
 if !exists("g:pickachu_default_date_format")
 	let g:pickachu_default_date_format = "%m/%d/%Y"
 endif
