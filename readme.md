@@ -79,7 +79,27 @@ or...
 
 ### Keyboard shortcuts
 
-The only keyboard shortcut currently is `ALT+c` which will allow you to open the color picker.
+By default, there are no keyboard mappings to avoid conflicts with mappings you currently use.
+
+However, here are some ideas:
+
+**Mapping the default color picker to `alt+c`:**
+
+```
+map <A-c> :Pickachu<CR>
+```
+
+**Mapping the file chooser to `alt+f`:**
+
+```
+map <A-c> :Pickachu file<CR>
+```
+
+**Mapping the date chooser to `alt+d`:**
+
+```
+map <A-d> :Pickachu date<CR>
+```
 
 ## Configuration
 

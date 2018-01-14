@@ -22,7 +22,6 @@ if !exists("g:pickachu_default_color_format")
 endif
 
 command! -nargs=* Pickachu call Pickachu(<f-args>)
-map <A-c> :Pickachu<CR>
 
 python3 import sys
 python3 import vim
