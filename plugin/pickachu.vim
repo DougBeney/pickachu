@@ -30,7 +30,7 @@ python3 sys.path.append(vim.eval('expand("<sfile>:h")'))
 
 function! Pickachu(...)
 python3 << EOF
-from pickachu import MainFunction
+from pickachu.main import MainFunction
 MainFunction()
 EOF
 endfunction
