@@ -2,9 +2,9 @@ import vim
 from datetime import datetime
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# name:        processors.py
+# name:				 processors.py
 # description: this file contains functions that process data
-#              from the runapp function (in app.py).
+#							 from the runapp function (in app.py).
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 DEFAULT_DATE_FORMAT = vim.eval("g:pickachu_default_date_format")
@@ -18,15 +18,17 @@ def dateProcessor(input, format=DEFAULT_DATE_FORMAT):
 	return dateObj.strftime(format)
 
 def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
+	# The system color picker returned an rgba value
 	if 'rgba' in input:
-		# RGBA as input
 		strip = input.strip('rgba)(')
 		array = strip.split(',')
+		# Round the alpha value to two decimal placed
 		array[3] = round(float(array[3]), 2)
 		rgba_string = "rgba("
 		values = ",".join(str(x) for x in array)
 		rgba_string += values + ")"
 		return rgba_string
+	# The system color picker returned an rgb value
 	elif 'rgb' in input:
 		# RGB as input
 		if format == 'rgb':
@@ -46,6 +48,7 @@ def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
 				rgba_string += values + ")"
 				return rgba_string
 		return array
+	# The system olor picker returned a hex
 	elif '#' in input:
 		# If there is a '#' in input,
 		# they are most likely using Qarma instead of Zenity
@@ -60,7 +63,7 @@ def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
 				rgb_string = "rgb("
 				for i in range(0, len(rgb_array)):
 					rgb_string += str(rgb_array[i])
-					if i < len(array) - 1:
+					if i < len(rgb_array) - 1:
 						rgb_string += ", "
 					else:
 						rgb_string += ")"
@@ -69,7 +72,7 @@ def colorProcessor(input, format=DEFAULT_COLOR_FORMAT):
 				rgba_string = "rgba("
 				for i in range(0, len(rgb_array)):
 					rgba_string += str(rgb_array[i])
-					if i < len(array) - 1:
+					if i < len(rgb_array) - 1:
 						rgba_string += ", "
 					else:
 						rgba_string += ", 1)"
