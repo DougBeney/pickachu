@@ -11,14 +11,20 @@ from . import processors
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 ZENITY_COMMAND = vim.eval("g:pickachu_default_command")
+# Note: This is not the final date format that displays on
+#       the users' buffer. This is the format we force
+#       Zenity/Qarma to provide us.
+RETURNED_DATE_FORMAT = "%m/%d/%Y"
+if ZENITY_COMMAND == 'qarma':
+	RETURNED_DATE_FORMAT = "MM/dd/yy"
 
 apps = {
 	'date': {
 		'cmd': ZENITY_COMMAND,
 		'processor': processors.dateProcessor,
 		'options': [
-            '--calendar',
-			'--date-format=%m/%d/%Y'
+			'--calendar',
+			'--date-format=' + RETURNED_DATE_FORMAT
 		]
 	},
 	'file': {
@@ -30,8 +36,8 @@ apps = {
 	'color': {
 		'cmd': ZENITY_COMMAND,
 		'options': [
-            '--color-selection'
-        ],
+			'--color-selection'
+    ],
 		'processor': processors.colorProcessor
 	}
 }
