@@ -108,7 +108,7 @@ map <A-d> :Pickachu date<CR>
 
 `let g:pickachu_default_color_format = "hex"`
 
-**Availible color formats are:**
+**Available color formats are:**
 
 - hex
 - rgb
