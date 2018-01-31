@@ -104,6 +104,12 @@ map <A-d> :Pickachu date<CR>
 
 ### Global Variables
 
+#### Default App
+
+`let g:pickachu_default_app = "color"`
+
+**Available apps:** See [Available Apps](#available-apps)
+
 #### Default Color Format
 
 `let g:pickachu_default_color_format = "hex"`
