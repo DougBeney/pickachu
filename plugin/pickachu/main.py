@@ -19,8 +19,6 @@ def MainFunction():
 		CHOOSEN_APP = vim.eval('a:1')
 	if arglength > 1:
 		CHOOSEN_FORMAT = vim.eval('a:2')
-	if not CHOOSEN_APP:
-		CHOOSEN_APP = 'color'
 
 	# We run apps.py's runApp function to get an output.
 	output = apps.runApp(CHOOSEN_APP, CHOOSEN_FORMAT)
