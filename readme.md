@@ -70,7 +70,7 @@ or...
 
 **Note:** By default, `app` is set to `color` and `format` has different defaults depending on what app you choose. See more about defaults and how to change them in the [Configuration](#configuration) section
 
-**Availible Apps**:
+#### Available Apps
 
 - **color** - The color-picker utility. Default format = `hex`.
 - **date** - The date-picker utility. Default format is `%m/%d/%Y`. More about formatting is discussed in the [Configuration](#configuration) section.
