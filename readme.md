@@ -1,5 +1,4 @@
-Pickachu
----
+# Pickachu
 
 **Table of Contents**:
 
