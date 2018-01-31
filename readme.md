@@ -93,7 +93,7 @@ map <A-c> :Pickachu<CR>
 **Mapping the file chooser to `alt+f`:**
 
 ```
-map <A-c> :Pickachu file<CR>
+map <A-f> :Pickachu file<CR>
 ```
 
 **Mapping the date chooser to `alt+d`:**
