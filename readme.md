@@ -122,7 +122,7 @@ map <A-d> :Pickachu date<CR>
 - rgb
 - rgba
 
-#### Default Date Format:
+#### Default Date Format
 
 `let g:pickachu_default_date_format = "%m/%d/%Y"`
 
