@@ -8,20 +8,23 @@ from . import apps
 #              and inserts valid output to the user's buffer.
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+DEFAULT_APP = vim.eval('g:pickachu_default_app')
+
+
 def MainFunction():
 	# This section is for getting the
 	# arguments from the user's Vim
 	# command.
 	arglength = int(vim.eval('a:0'))
-	CHOOSEN_APP = 'color'
+	choosen_app = DEFAULT_APP
 	CHOOSEN_FORMAT = None
 	if arglength > 0:
-		CHOOSEN_APP = vim.eval('a:1')
+		choosen_app = vim.eval('a:1')
 	if arglength > 1:
 		CHOOSEN_FORMAT = vim.eval('a:2')
 
 	# We run apps.py's runApp function to get an output.
-	output = apps.runApp(CHOOSEN_APP, CHOOSEN_FORMAT)
+	output = apps.runApp(choosen_app, CHOOSEN_FORMAT)
 
 	# Now, if runApp gave us an output, we can use the
 	# Vim API to print the output to the user's buffer.
@@ -31,4 +34,3 @@ def MainFunction():
 		vim.current.window.cursor = (pos_y, pos_x + len(output))
 	else:
 		print('Pickachu - Canceled')
-
