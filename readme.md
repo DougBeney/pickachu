@@ -17,7 +17,7 @@
   * [Global Variables](#global-variables)
     * [Default App](#default-app)
     * [Default Color Format](#default-color-format)
-    * [Default Date Format:](#default-date-format)
+    * [Default Date Format](#default-date-format)
   * [KDE / Qt5 / Qarma support](#kde--qt5--qarma-support)
 
 <!-- vim-markdown-toc -->
