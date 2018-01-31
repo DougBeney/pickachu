@@ -6,17 +6,19 @@
 
 * [Demo](#demo)
 * [Installation](#installation)
-	* [Plug](#plug)
-	* [Pathogen](#pathogen)
-	* [Apt-Vim](#apt-vim)
+  * [Plug](#plug)
+  * [Pathogen](#pathogen)
+  * [Apt-Vim](#apt-vim)
 * [Usage](#usage)
-	* [Commands](#commands)
-	* [Keyboard shortcuts](#keyboard-shortcuts)
+  * [Commands](#commands)
+    * [Available Apps](#available-apps)
+  * [Keyboard shortcuts](#keyboard-shortcuts)
 * [Configuration](#configuration)
-	* [Global Variables](#global-variables)
-		* [Default Color Format](#default-color-format)
-		* [Default Date Format:](#default-date-format)
-	* [KDE / Qt5 / Qarma support](#kde--qt5--qarma-support)
+  * [Global Variables](#global-variables)
+    * [Default App](#default-app)
+    * [Default Color Format](#default-color-format)
+    * [Default Date Format:](#default-date-format)
+  * [KDE / Qt5 / Qarma support](#kde--qt5--qarma-support)
 
 <!-- vim-markdown-toc -->
 
