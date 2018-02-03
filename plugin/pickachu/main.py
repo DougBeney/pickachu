@@ -16,15 +16,15 @@ def MainFunction():
 	# arguments from the user's Vim
 	# command.
 	arglength = int(vim.eval('a:0'))
-	choosen_app = DEFAULT_APP
+	CHOOSEN_APP = DEFAULT_APP
 	CHOOSEN_FORMAT = None
 	if arglength > 0:
-		choosen_app = vim.eval('a:1')
+		CHOOSEN_APP = vim.eval('a:1')
 	if arglength > 1:
 		CHOOSEN_FORMAT = vim.eval('a:2')
 
 	# We run apps.py's runApp function to get an output.
-	output = apps.runApp(choosen_app, CHOOSEN_FORMAT)
+	output = apps.runApp(CHOOSEN_APP, CHOOSEN_FORMAT)
 
 	# Now, if runApp gave us an output, we can use the
 	# Vim API to print the output to the user's buffer.

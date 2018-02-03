@@ -9,7 +9,7 @@ if !has('python3')
 endif
 
 if !exists('g:pickachu_default_app')
-  let g:pickachu_default_app = "color"
+	let g:pickachu_default_app = "color"
 endif
 
 if !exists("g:pickachu_default_command")
