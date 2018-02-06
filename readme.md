@@ -1,5 +1,4 @@
-Pickachu
----
+# Pickachu
 
 **Table of Contents**:
 
@@ -12,11 +11,13 @@ Pickachu
 	* [Apt-Vim](#apt-vim)
 * [Usage](#usage)
 	* [Commands](#commands)
+		* [Available Apps](#available-apps)
 	* [Keyboard shortcuts](#keyboard-shortcuts)
 * [Configuration](#configuration)
 	* [Global Variables](#global-variables)
+		* [Default App](#default-app)
 		* [Default Color Format](#default-color-format)
-		* [Default Date Format:](#default-date-format)
+		* [Default Date Format](#default-date-format)
 	* [KDE / Qt5 / Qarma support](#kde--qt5--qarma-support)
 
 <!-- vim-markdown-toc -->
@@ -71,7 +72,7 @@ or...
 
 **Note:** By default, `app` is set to `color` and `format` has different defaults depending on what app you choose. See more about defaults and how to change them in the [Configuration](#configuration) section
 
-**Availible Apps**:
+#### Available Apps
 
 - **color** - The color-picker utility. Default format = `hex`.
 - **date** - The date-picker utility. Default format is `%m/%d/%Y`. More about formatting is discussed in the [Configuration](#configuration) section.
@@ -92,7 +93,7 @@ map <A-c> :Pickachu<CR>
 **Mapping the file chooser to `alt+f`:**
 
 ```
-map <A-c> :Pickachu file<CR>
+map <A-f> :Pickachu file<CR>
 ```
 
 **Mapping the date chooser to `alt+d`:**
@@ -105,17 +106,23 @@ map <A-d> :Pickachu date<CR>
 
 ### Global Variables
 
+#### Default App
+
+`let g:pickachu_default_app = "color"`
+
+**Available apps:** See [Available Apps](#available-apps)
+
 #### Default Color Format
 
 `let g:pickachu_default_color_format = "hex"`
 
-**Availible color formats are:**
+**Available color formats are:**
 
 - hex
 - rgb
 - rgba
 
-#### Default Date Format:
+#### Default Date Format
 
 `let g:pickachu_default_date_format = "%m/%d/%Y"`
 

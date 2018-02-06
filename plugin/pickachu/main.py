@@ -8,12 +8,15 @@ from . import apps
 #              and inserts valid output to the user's buffer.
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+DEFAULT_APP = vim.eval('g:pickachu_default_app')
+
+
 def MainFunction():
 	# This section is for getting the
 	# arguments from the user's Vim
 	# command.
 	arglength = int(vim.eval('a:0'))
-	CHOOSEN_APP = 'color'
+	CHOOSEN_APP = DEFAULT_APP
 	CHOOSEN_FORMAT = None
 	if arglength > 0:
 		CHOOSEN_APP = vim.eval('a:1')
@@ -31,4 +34,3 @@ def MainFunction():
 		vim.current.window.cursor = (pos_y, pos_x + len(output))
 	else:
 		print('Pickachu - Canceled')
-

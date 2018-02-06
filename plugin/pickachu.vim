@@ -8,6 +8,9 @@ if !has('python3')
 	echo "You need Vim Python3 support to use this plugin. If you're using NeoVim, try running `pip3 install neovim` to resolve this issue."
 endif
 
+if !exists('g:pickachu_default_app')
+	let g:pickachu_default_app = "color"
+endif
 
 if !exists("g:pickachu_default_command")
 	let g:pickachu_default_command = "zenity"
