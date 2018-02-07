@@ -41,3 +41,5 @@ from pickachu.main import MainFunction
 MainFunction()
 EOF
 endfunction
+
+" vim: noexpandtab
