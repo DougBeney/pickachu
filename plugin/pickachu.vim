@@ -24,7 +24,12 @@ if !exists("g:pickachu_default_color_format")
 	let g:pickachu_default_color_format = "hex"
 endif
 
-command! -nargs=* Pickachu call Pickachu(<f-args>)
+function! s:pickachuCompletion(ArgLead, CmdLine, CursorPos)
+	let options = ['color', 'date', 'file']
+	return options
+endfunction
+
+command! -nargs=* -complete=customlist,<SID>pickachuCompletion Pickachu call Pickachu(<f-args>)
 
 python3 import sys
 python3 import vim
@@ -36,3 +41,5 @@ from pickachu.main import MainFunction
 MainFunction()
 EOF
 endfunction
+
+" vim: noexpandtab
