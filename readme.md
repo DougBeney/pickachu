@@ -1,4 +1,4 @@
-# Pickachu
+# Pickachu: The BEST color picker for Vim
 
 **Table of Contents**:
 
