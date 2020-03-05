@@ -45,7 +45,7 @@ Plug 'DougBeney/pickachu'
 ### Pathogen
 
 ```
-git clone https://github.com/DougBeney/pickachu.git ~/.vim/bundle/nerdtree
+git clone https://github.com/DougBeney/pickachu.git ~/.vim/bundle/pickachu
 ```
 
 ### Apt-Vim
