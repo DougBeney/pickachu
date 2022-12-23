@@ -1,7 +1,7 @@
 "Script: Pickachu
 "Version: 0.0.1
 "Copyright: Copyright (C) 2018 Doug Beney
-"Licence: 
+"Licence:
 "Website: https://dougie.io
 
 if !has('python3')
@@ -29,17 +29,6 @@ function! s:pickachuCompletion(ArgLead, CmdLine, CursorPos)
 	return options
 endfunction
 
-command! -nargs=* -complete=customlist,<SID>pickachuCompletion Pickachu call Pickachu(<f-args>)
-
-python3 import sys
-python3 import vim
-python3 sys.path.append(vim.eval('expand("<sfile>:h")'))
-
-function! Pickachu(...)
-python3 << EOF
-from pickachu.main import MainFunction
-MainFunction()
-EOF
-endfunction
+command! -nargs=* -complete=customlist,<SID>pickachuCompletion Pickachu call pickachu#Main(<f-args>)
 
 " vim: noexpandtab
